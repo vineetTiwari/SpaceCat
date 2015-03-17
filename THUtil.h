@@ -19,4 +19,6 @@ typedef NS_OPTIONS(uint32_t, THCollisionCategory) {
 
 @interface THUtil : NSObject
 
++ (NSInteger) randomWithMin:(NSInteger)min max:(NSInteger)max;
+
 @end

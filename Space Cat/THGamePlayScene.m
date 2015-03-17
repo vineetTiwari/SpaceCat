@@ -88,7 +88,6 @@
     
     if(firstBody.categoryBitMask == THCollisionCategoryEnemy && secondBody.categoryBitMask == THCollisionCategoryProjectile) {
         
-        NSLog(@"BAM!");
         THSpaceDogNode *spaceDog      =  (THSpaceDogNode *)firstBody.node;
         THProjectileNode *projectile  =  (THProjectileNode *)secondBody.node;
         
@@ -98,13 +97,37 @@
     }
     else if(firstBody.categoryBitMask == THCollisionCategoryEnemy && secondBody.categoryBitMask == THCollisionCategoryGround) {
         
-        NSLog(@"CRASH!");
         THSpaceDogNode *spaceDog = (THSpaceDogNode *)firstBody.node;
         
         [spaceDog removeFromParent];
         
     }
     
+    [self createDebrisAtPosition:contact.contactPoint];
+    
+}
+
+- (void) createDebrisAtPosition:(CGPoint)position {
+
+    NSInteger numberOfPieces = [THUtil randomWithMin:5 max:20];
+    
+    for (int i = 0; i < numberOfPieces; i++) {
+        NSInteger randomPiece = [THUtil randomWithMin:1 max:4];
+        NSString *imageName = [NSString stringWithFormat:@"debri_%ld", randomPiece];
+        
+        SKSpriteNode *debris = [SKSpriteNode spriteNodeWithImageNamed:imageName];
+        debris.position = position;
+        [self addChild:debris];
+        
+        debris.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:debris.frame.size];
+        debris.physicsBody.categoryBitMask = THCollisionCategoryDebris;
+        debris.physicsBody.collisionBitMask = THCollisionCategoryDebris | THCollisionCategoryGround;
+        debris.physicsBody.contactTestBitMask = 0;
+        debris.name = @"Debris";
+        debris.physicsBody.velocity = CGVectorMake([THUtil randomWithMin:-150 max:150], [THUtil randomWithMin:150 max:350]);
+        
+        [debris runAction:[SKAction waitForDuration:2.0] completion:^{[debris removeFromParent];}];
+    }
 }
 
 @end
