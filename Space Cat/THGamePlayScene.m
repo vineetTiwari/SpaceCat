@@ -11,6 +11,7 @@
 #import "THSpaceCatNode.h"
 #import "THProjectileNode.h"
 #import "THSpaceDogNode.h"
+#import "THGroundNode.h"
 
 @implementation THGamePlayScene
 
@@ -28,6 +29,11 @@
         [self addChild:spaceCat];
         
         [self addSpaceDog];
+        
+        self.physicsWorld.gravity = CGVectorMake(0, -9.8);
+        
+        THGroundNode *ground = [THGroundNode groundWithSize:CGSizeMake(self.frame.size.width, 22)];
+        [self addChild:ground];
     }
     return self;
 }

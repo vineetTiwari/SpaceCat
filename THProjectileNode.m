@@ -17,9 +17,16 @@
     projectile.position = position;
     projectile.name = @"Projectile";
     [projectile setupAnimation];
+    [projectile setupPhysicsbody];
     
     return projectile;
     
+}
+
+- (void) setupPhysicsbody {
+    
+    self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
+    self.physicsBody.affectedByGravity = NO;
 }
 
 - (void) setupAnimation {

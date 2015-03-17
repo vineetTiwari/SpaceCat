@@ -10,6 +10,7 @@
 		960029731AB7B93B00090B70 /* THProjectileNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 960029721AB7B93B00090B70 /* THProjectileNode.m */; };
 		960029771AB7CC7700090B70 /* THUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 960029761AB7CC7700090B70 /* THUtil.m */; };
 		9600297A1AB7D3DE00090B70 /* THSpaceDogNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 960029791AB7D3DE00090B70 /* THSpaceDogNode.m */; };
+		9600297D1AB7DCAC00090B70 /* THGroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9600297C1AB7DCAC00090B70 /* THGroundNode.m */; };
 		9626A2201AB6F67D0088F108 /* THTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9626A21F1AB6F67D0088F108 /* THTitleScene.m */; };
 		9626A2231AB6F9E40088F108 /* THGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9626A2221AB6F9E40088F108 /* THGamePlayScene.m */; };
 		9626A2251AB6FF320088F108 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9626A2241AB6FF320088F108 /* Sprites.atlas */; };
@@ -49,6 +50,8 @@
 		960029761AB7CC7700090B70 /* THUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THUtil.m; path = ../THUtil.m; sourceTree = "<group>"; };
 		960029781AB7D3DE00090B70 /* THSpaceDogNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSpaceDogNode.h; sourceTree = "<group>"; };
 		960029791AB7D3DE00090B70 /* THSpaceDogNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSpaceDogNode.m; sourceTree = "<group>"; };
+		9600297B1AB7DCAC00090B70 /* THGroundNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGroundNode.h; sourceTree = "<group>"; };
+		9600297C1AB7DCAC00090B70 /* THGroundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THGroundNode.m; sourceTree = "<group>"; };
 		9626A21E1AB6F67D0088F108 /* THTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTitleScene.h; sourceTree = "<group>"; };
 		9626A21F1AB6F67D0088F108 /* THTitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTitleScene.m; sourceTree = "<group>"; };
 		9626A2211AB6F9E40088F108 /* THGamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGamePlayScene.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				960029791AB7D3DE00090B70 /* THSpaceDogNode.m */,
 				9626A2291AB782700088F108 /* THSpaceCatNode.h */,
 				9626A22A1AB782700088F108 /* THSpaceCatNode.m */,
+				9600297B1AB7DCAC00090B70 /* THGroundNode.h */,
+				9600297C1AB7DCAC00090B70 /* THGroundNode.m */,
 				9626A2261AB70E0D0088F108 /* THMachineNode.h */,
 				9626A2271AB70E0D0088F108 /* THMachineNode.m */,
 				960029751AB7CC7700090B70 /* THUtil.h */,
@@ -302,6 +307,7 @@
 				9626A2201AB6F67D0088F108 /* THTitleScene.m in Sources */,
 				9626A2281AB70E0D0088F108 /* THMachineNode.m in Sources */,
 				9626A22B1AB782700088F108 /* THSpaceCatNode.m in Sources */,
+				9600297D1AB7DCAC00090B70 /* THGroundNode.m in Sources */,
 				9600297A1AB7D3DE00090B70 /* THSpaceDogNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
