@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960029731AB7B93B00090B70 /* THProjectileNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 960029721AB7B93B00090B70 /* THProjectileNode.m */; };
 		9626A2201AB6F67D0088F108 /* THTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9626A21F1AB6F67D0088F108 /* THTitleScene.m */; };
 		9626A2231AB6F9E40088F108 /* THGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9626A2221AB6F9E40088F108 /* THGamePlayScene.m */; };
 		9626A2251AB6FF320088F108 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9626A2241AB6FF320088F108 /* Sprites.atlas */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		960029711AB7B93B00090B70 /* THProjectileNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THProjectileNode.h; path = ../THProjectileNode.h; sourceTree = "<group>"; };
+		960029721AB7B93B00090B70 /* THProjectileNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THProjectileNode.m; path = ../THProjectileNode.m; sourceTree = "<group>"; };
 		9626A21E1AB6F67D0088F108 /* THTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTitleScene.h; sourceTree = "<group>"; };
 		9626A21F1AB6F67D0088F108 /* THTitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTitleScene.m; sourceTree = "<group>"; };
 		9626A2211AB6F9E40088F108 /* THGamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGamePlayScene.h; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				9626A21F1AB6F67D0088F108 /* THTitleScene.m */,
 				9626A2211AB6F9E40088F108 /* THGamePlayScene.h */,
 				9626A2221AB6F9E40088F108 /* THGamePlayScene.m */,
+				960029711AB7B93B00090B70 /* THProjectileNode.h */,
+				960029721AB7B93B00090B70 /* THProjectileNode.m */,
 				9626A2291AB782700088F108 /* THSpaceCatNode.h */,
 				9626A22A1AB782700088F108 /* THSpaceCatNode.m */,
 				9626A2261AB70E0D0088F108 /* THMachineNode.h */,
@@ -278,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960029731AB7B93B00090B70 /* THProjectileNode.m in Sources */,
 				B3D5913D192176DE00198E96 /* THViewController.m in Sources */,
 				B3D59137192176DE00198E96 /* THAppDelegate.m in Sources */,
 				9626A2231AB6F9E40088F108 /* THGamePlayScene.m in Sources */,

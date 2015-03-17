@@ -9,6 +9,7 @@
 #import "THGamePlayScene.h"
 #import "THMachineNode.h"
 #import "THSpaceCatNode.h"
+#import "THProjectileNode.h"
 
 @implementation THGamePlayScene
 
@@ -29,8 +30,19 @@
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        
+        CGPoint position = [touch locationInNode:self];
+        [self shootProjectileTowardsPosition:position];
+    }
+}
+
+- (void) shootProjectileTowardsPosition:(CGPoint)position {
     THSpaceCatNode *spaceCat = (THSpaceCatNode *)[self childNodeWithName:@"SpaceCat"];
     [spaceCat performTap];
+    
+    THProjectileNode *projectile = [THProjectileNode projectileAtPosition:position];
+    [self addChild:projectile];
 }
 
 @end
