@@ -7,6 +7,7 @@
 //
 
 #import "THProjectileNode.h"
+#import "THUtil.h"
 
 @implementation THProjectileNode
 
@@ -62,12 +63,17 @@
     
     //time = distance / speed
     
-    float time = distanceC / 100;
+    float time = distanceC / THProjectileSpeed;
+    float waitToFade = time * 0.75;
+    float fadeTime = time - waitToFade;
     
     SKAction *moveProjectile = [SKAction moveTo:pointOffscrene duration:time];
-    
     [self runAction:moveProjectile];
     
+    NSArray *sequence = @[[SKAction waitForDuration:waitToFade],
+                          [SKAction fadeOutWithDuration:fadeTime],
+                          [SKAction removeFromParent]];
+    [self runAction:[SKAction sequence:sequence]];
     
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		960029731AB7B93B00090B70 /* THProjectileNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 960029721AB7B93B00090B70 /* THProjectileNode.m */; };
+		960029771AB7CC7700090B70 /* THUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 960029761AB7CC7700090B70 /* THUtil.m */; };
 		9626A2201AB6F67D0088F108 /* THTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9626A21F1AB6F67D0088F108 /* THTitleScene.m */; };
 		9626A2231AB6F9E40088F108 /* THGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9626A2221AB6F9E40088F108 /* THGamePlayScene.m */; };
 		9626A2251AB6FF320088F108 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9626A2241AB6FF320088F108 /* Sprites.atlas */; };
@@ -43,6 +44,8 @@
 /* Begin PBXFileReference section */
 		960029711AB7B93B00090B70 /* THProjectileNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THProjectileNode.h; path = ../THProjectileNode.h; sourceTree = "<group>"; };
 		960029721AB7B93B00090B70 /* THProjectileNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THProjectileNode.m; path = ../THProjectileNode.m; sourceTree = "<group>"; };
+		960029751AB7CC7700090B70 /* THUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THUtil.h; path = ../THUtil.h; sourceTree = "<group>"; };
+		960029761AB7CC7700090B70 /* THUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THUtil.m; path = ../THUtil.m; sourceTree = "<group>"; };
 		9626A21E1AB6F67D0088F108 /* THTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTitleScene.h; sourceTree = "<group>"; };
 		9626A21F1AB6F67D0088F108 /* THTitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTitleScene.m; sourceTree = "<group>"; };
 		9626A2211AB6F9E40088F108 /* THGamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGamePlayScene.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				9626A22A1AB782700088F108 /* THSpaceCatNode.m */,
 				9626A2261AB70E0D0088F108 /* THMachineNode.h */,
 				9626A2271AB70E0D0088F108 /* THMachineNode.m */,
+				960029751AB7CC7700090B70 /* THUtil.h */,
+				960029761AB7CC7700090B70 /* THUtil.m */,
 				B3D59143192176DE00198E96 /* Images.xcassets */,
 				9626A2241AB6FF320088F108 /* Sprites.atlas */,
 				B3D5912D192176DE00198E96 /* Supporting Files */,
@@ -285,6 +290,7 @@
 			files = (
 				960029731AB7B93B00090B70 /* THProjectileNode.m in Sources */,
 				B3D5913D192176DE00198E96 /* THViewController.m in Sources */,
+				960029771AB7CC7700090B70 /* THUtil.m in Sources */,
 				B3D59137192176DE00198E96 /* THAppDelegate.m in Sources */,
 				9626A2231AB6F9E40088F108 /* THGamePlayScene.m in Sources */,
 				B3D59133192176DE00198E96 /* main.m in Sources */,
