@@ -12,6 +12,7 @@
 #import "THProjectileNode.h"
 #import "THSpaceDogNode.h"
 #import "THGroundNode.h"
+#import "THUtil.h"
 
 @implementation THGamePlayScene
 
@@ -31,6 +32,8 @@
         [self addSpaceDog];
         
         self.physicsWorld.gravity = CGVectorMake(0, -9.8);
+        
+        self.physicsWorld.contactDelegate = self;
         
         THGroundNode *ground = [THGroundNode groundWithSize:CGSizeMake(self.frame.size.width, 22)];
         [self addChild:ground];
@@ -66,6 +69,42 @@
     THSpaceDogNode *spaceDogB = [THSpaceDogNode spaceDogOffType:THSpaceDogTypeB];
     spaceDogB.position = CGPointMake(200, 300);
     [self addChild:spaceDogB];
+}
+
+- (void) didBeginContact:(SKPhysicsContact *)contact {
+    
+    SKPhysicsBody *firstBody, *secondBody;
+    
+    if(contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask) {
+        
+        firstBody  = contact.bodyA;
+        secondBody = contact.bodyB;
+    }
+    else {
+        
+        firstBody  = contact.bodyB;
+        secondBody = contact.bodyA;
+    }
+    
+    if(firstBody.categoryBitMask == THCollisionCategoryEnemy && secondBody.categoryBitMask == THCollisionCategoryProjectile) {
+        
+        NSLog(@"BAM!");
+        THSpaceDogNode *spaceDog      =  (THSpaceDogNode *)firstBody.node;
+        THProjectileNode *projectile  =  (THProjectileNode *)secondBody.node;
+        
+        [spaceDog removeFromParent];
+        [projectile removeFromParent];
+        
+    }
+    else if(firstBody.categoryBitMask == THCollisionCategoryEnemy && secondBody.categoryBitMask == THCollisionCategoryGround) {
+        
+        NSLog(@"CRASH!");
+        THSpaceDogNode *spaceDog = (THSpaceDogNode *)firstBody.node;
+        
+        [spaceDog removeFromParent];
+        
+    }
+    
 }
 
 @end
