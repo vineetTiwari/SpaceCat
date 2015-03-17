@@ -10,6 +10,7 @@
 #import "THMachineNode.h"
 #import "THSpaceCatNode.h"
 #import "THProjectileNode.h"
+#import "THSpaceDogNode.h"
 
 @implementation THGamePlayScene
 
@@ -25,6 +26,8 @@
         
         THSpaceCatNode *spaceCat = [THSpaceCatNode spaceCatAtPosition:CGPointMake(machine.position.x, machine.position.y-2)];
         [self addChild:spaceCat];
+        
+        [self addSpaceDog];
     }
     return self;
 }
@@ -46,6 +49,17 @@
     THProjectileNode *projectile = [THProjectileNode projectileAtPosition:CGPointMake(machine.position.x, machine.position.y + machine.frame.size.height - 15)];
     [self addChild:projectile];
     [projectile moveTowardsPositioin:position];
+}
+
+- (void) addSpaceDog {
+    
+    THSpaceDogNode *spaceDogA = [THSpaceDogNode spaceDogOffType:THSpaceDogTypeA];
+    spaceDogA.position = CGPointMake(100, 300);
+    [self addChild:spaceDogA];
+    
+    THSpaceDogNode *spaceDogB = [THSpaceDogNode spaceDogOffType:THSpaceDogTypeB];
+    spaceDogB.position = CGPointMake(200, 300);
+    [self addChild:spaceDogB];
 }
 
 @end
