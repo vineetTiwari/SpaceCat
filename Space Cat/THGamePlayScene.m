@@ -41,8 +41,42 @@
     THSpaceCatNode *spaceCat = (THSpaceCatNode *)[self childNodeWithName:@"SpaceCat"];
     [spaceCat performTap];
     
-    THProjectileNode *projectile = [THProjectileNode projectileAtPosition:position];
+    THMachineNode *machine = (THMachineNode *)[self childNodeWithName:@"Machine"];
+    
+    THProjectileNode *projectile = [THProjectileNode projectileAtPosition:CGPointMake(machine.position.x, machine.position.y + machine.frame.size.height - 15)];
     [self addChild:projectile];
+    [projectile moveTowardsPositioin:position];
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

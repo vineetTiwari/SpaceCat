@@ -12,4 +12,6 @@
 
 + (instancetype) projectileAtPosition:(CGPoint)position;
 
+- (void) moveTowardsPositioin:(CGPoint)position;
+
 @end
