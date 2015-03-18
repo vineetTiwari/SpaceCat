@@ -24,6 +24,8 @@
 		96EE43861AB91894001875BD /* Gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EE43831AB91894001875BD /* Gameplay.mp3 */; };
 		96EE43871AB91894001875BD /* StartScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EE43841AB91894001875BD /* StartScreen.mp3 */; };
 		96EE43891AB918C5001875BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE43881AB918C5001875BD /* AVFoundation.framework */; };
+		96EE43901AB92B39001875BD /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96EE438E1AB92B39001875BD /* Explosion.sks */; };
+		96EE43911AB92B39001875BD /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EE438F1AB92B39001875BD /* spark.png */; };
 		B3D59125192176DE00198E96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59124192176DE00198E96 /* Foundation.framework */; };
 		B3D59127192176DE00198E96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59126192176DE00198E96 /* CoreGraphics.framework */; };
 		B3D59129192176DE00198E96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59128192176DE00198E96 /* UIKit.framework */; };
@@ -77,6 +79,8 @@
 		96EE43831AB91894001875BD /* Gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gameplay.mp3; sourceTree = "<group>"; };
 		96EE43841AB91894001875BD /* StartScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StartScreen.mp3; sourceTree = "<group>"; };
 		96EE43881AB918C5001875BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		96EE438E1AB92B39001875BD /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
+		96EE438F1AB92B39001875BD /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		B3D59121192176DE00198E96 /* Space Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D59124192176DE00198E96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3D59126192176DE00198E96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -191,6 +195,8 @@
 				9626A2271AB70E0D0088F108 /* THMachineNode.m */,
 				960029751AB7CC7700090B70 /* THUtil.h */,
 				960029761AB7CC7700090B70 /* THUtil.m */,
+				96EE438E1AB92B39001875BD /* Explosion.sks */,
+				96EE438F1AB92B39001875BD /* spark.png */,
 				B3D59143192176DE00198E96 /* Images.xcassets */,
 				9626A2241AB6FF320088F108 /* Sprites.atlas */,
 				B3D5912D192176DE00198E96 /* Supporting Files */,
@@ -314,6 +320,8 @@
 				96EE43811AB91153001875BD /* PressStart.caf in Resources */,
 				96EE43801AB91153001875BD /* Laser.caf in Resources */,
 				B3D59144192176DE00198E96 /* Images.xcassets in Resources */,
+				96EE43911AB92B39001875BD /* spark.png in Resources */,
+				96EE43901AB92B39001875BD /* Explosion.sks in Resources */,
 				96EE43851AB91894001875BD /* GameOver.mp3 in Resources */,
 				96EE437E1AB91153001875BD /* Damage.caf in Resources */,
 				9626A2251AB6FF320088F108 /* Sprites.atlas in Resources */,
