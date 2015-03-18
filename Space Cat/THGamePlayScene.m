@@ -18,6 +18,12 @@
 
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 @property (nonatomic) NSTimeInterval timeSinceEnemyAdded;
+@property (nonatomic) NSTimeInterval totalGameTime;
+@property (nonatomic) NSInteger minSpeed;
+@property (nonatomic) NSTimeInterval addEnemyTimeInterval;
+@property (nonatomic) SKAction *damageSFX;
+@property (nonatomic) SKAction *explodeSFX;
+@property (nonatomic) SKAction *laserSFX;
 
 @end
 
@@ -28,6 +34,9 @@
         
         self.lastUpdateTimeInterval =  0;
         self.timeSinceEnemyAdded    =  0;
+        self.addEnemyTimeInterval   =  1.25;
+        self.totalGameTime          =  0;
+        self.minSpeed               =  THSpaceDogMinSpeed;
         
         /* Setup your scene here */
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background_1"];
@@ -46,8 +55,18 @@
         
         THGroundNode *ground = [THGroundNode groundWithSize:CGSizeMake(self.frame.size.width, 22)];
         [self addChild:ground];
+        
+        [self setupSounds];
     }
     return self;
+}
+
+- (void) setupSounds {
+    
+    self.damageSFX  = [SKAction playSoundFileNamed:  @"Damage.caf" waitForCompletion:NO];
+    self.explodeSFX = [SKAction playSoundFileNamed: @"Explode.caf" waitForCompletion:NO];
+    self.laserSFX   = [SKAction playSoundFileNamed:   @"Laser.caf" waitForCompletion:NO];
+    
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -67,6 +86,8 @@
     THProjectileNode *projectile = [THProjectileNode projectileAtPosition:CGPointMake(machine.position.x, machine.position.y + machine.frame.size.height - 15)];
     [self addChild:projectile];
     [projectile moveTowardsPositioin:position];
+    
+    [self runAction:self.laserSFX];
 }
 
 - (void) addSpaceDog {
@@ -74,8 +95,12 @@
     NSUInteger randomSpaceDog = [THUtil randomWithMin:0 max:2];
     
     THSpaceDogNode *spaceDog = [THSpaceDogNode spaceDogOffType:randomSpaceDog];
+    
+    float dy = [THUtil randomWithMin: THSpaceDogMinSpeed max: THSpaceDogMaxSpeed];
+    spaceDog.physicsBody.velocity = CGVectorMake(0, dy);
+    
     float y = self.frame.size.height + spaceDog.size.height;
-    float x = [THUtil randomWithMin: 10 + spaceDog.size.width max: self.frame.size.width - 10];
+    float x = [THUtil randomWithMin: 10 + spaceDog.size.width max: self.frame.size.width - spaceDog.size.width - 10];
     
     spaceDog.position = CGPointMake(x, y);
     [self addChild:spaceDog];
@@ -86,18 +111,42 @@
     
     if (self.lastUpdateTimeInterval) {
         
-        self.timeSinceEnemyAdded += currentTime - self.lastUpdateTimeInterval;
-        
+        self.timeSinceEnemyAdded +=  currentTime - self.lastUpdateTimeInterval;
+        self.totalGameTime       +=  currentTime - self.lastUpdateTimeInterval;
     }
     
-    if (self.timeSinceEnemyAdded >= 1.15) {
-        
+    if (self.timeSinceEnemyAdded >= self.addEnemyTimeInterval) {
+    
         [self addSpaceDog];
         self.timeSinceEnemyAdded = 0;
         
     }
     
     self.lastUpdateTimeInterval = currentTime;
+    
+    if (self.totalGameTime > 480) {
+        // 480 / 60 = 8 minutes
+        self.addEnemyTimeInterval =  0.50;
+        self.minSpeed             =  -160;
+    }
+    
+    else if (self.totalGameTime > 240) {
+        // 240 / 60 = 4 minutes
+        self.addEnemyTimeInterval = 0.65;
+        self.minSpeed             = -150;
+    }
+    
+    else if (self.totalGameTime > 20) {
+        // 120 / 60  = 2 minutes
+        self.addEnemyTimeInterval = 0.75;
+        self.minSpeed             = -125;
+    }
+    
+    else if (self.totalGameTime > 10) {
+        self.addEnemyTimeInterval = 1.00;
+        self.minSpeed             = -100;
+        
+    }
     
 }
 
@@ -109,6 +158,7 @@
         
         firstBody  = contact.bodyA;
         secondBody = contact.bodyB;
+        
     }
     else {
         
@@ -121,13 +171,19 @@
         THSpaceDogNode *spaceDog      =  (THSpaceDogNode *)firstBody.node;
         THProjectileNode *projectile  =  (THProjectileNode *)secondBody.node;
         
+        [self runAction:self.explodeSFX];
+        
         [spaceDog removeFromParent];
         [projectile removeFromParent];
+        
+        
         
     }
     else if(firstBody.categoryBitMask == THCollisionCategoryEnemy && secondBody.categoryBitMask == THCollisionCategoryGround) {
         
         THSpaceDogNode *spaceDog = (THSpaceDogNode *)firstBody.node;
+        
+        [self runAction:self.damageSFX];
         
         [spaceDog removeFromParent];
         

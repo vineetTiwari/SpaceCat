@@ -16,6 +16,10 @@
 		9626A2251AB6FF320088F108 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9626A2241AB6FF320088F108 /* Sprites.atlas */; };
 		9626A2281AB70E0D0088F108 /* THMachineNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9626A2271AB70E0D0088F108 /* THMachineNode.m */; };
 		9626A22B1AB782700088F108 /* THSpaceCatNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9626A22A1AB782700088F108 /* THSpaceCatNode.m */; };
+		96EE437E1AB91153001875BD /* Damage.caf in Resources */ = {isa = PBXBuildFile; fileRef = 96EE437A1AB91153001875BD /* Damage.caf */; };
+		96EE437F1AB91153001875BD /* Explode.caf in Resources */ = {isa = PBXBuildFile; fileRef = 96EE437B1AB91153001875BD /* Explode.caf */; };
+		96EE43801AB91153001875BD /* Laser.caf in Resources */ = {isa = PBXBuildFile; fileRef = 96EE437C1AB91153001875BD /* Laser.caf */; };
+		96EE43811AB91153001875BD /* PressStart.caf in Resources */ = {isa = PBXBuildFile; fileRef = 96EE437D1AB91153001875BD /* PressStart.caf */; };
 		B3D59125192176DE00198E96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59124192176DE00198E96 /* Foundation.framework */; };
 		B3D59127192176DE00198E96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59126192176DE00198E96 /* CoreGraphics.framework */; };
 		B3D59129192176DE00198E96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59128192176DE00198E96 /* UIKit.framework */; };
@@ -61,6 +65,10 @@
 		9626A2271AB70E0D0088F108 /* THMachineNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THMachineNode.m; path = ../THMachineNode.m; sourceTree = "<group>"; };
 		9626A2291AB782700088F108 /* THSpaceCatNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THSpaceCatNode.h; path = ../THSpaceCatNode.h; sourceTree = "<group>"; };
 		9626A22A1AB782700088F108 /* THSpaceCatNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THSpaceCatNode.m; path = ../THSpaceCatNode.m; sourceTree = "<group>"; };
+		96EE437A1AB91153001875BD /* Damage.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Damage.caf; sourceTree = "<group>"; };
+		96EE437B1AB91153001875BD /* Explode.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explode.caf; sourceTree = "<group>"; };
+		96EE437C1AB91153001875BD /* Laser.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Laser.caf; sourceTree = "<group>"; };
+		96EE437D1AB91153001875BD /* PressStart.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart.caf; sourceTree = "<group>"; };
 		B3D59121192176DE00198E96 /* Space Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D59124192176DE00198E96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3D59126192176DE00198E96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -108,6 +116,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96EE43791AB91134001875BD /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				96EE437A1AB91153001875BD /* Damage.caf */,
+				96EE437B1AB91153001875BD /* Explode.caf */,
+				96EE437C1AB91153001875BD /* Laser.caf */,
+				96EE437D1AB91153001875BD /* PressStart.caf */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		B3D59118192176DE00198E96 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +161,7 @@
 		B3D5912C192176DE00198E96 /* Space Cat */ = {
 			isa = PBXGroup;
 			children = (
+				96EE43791AB91134001875BD /* Sounds */,
 				9626A21E1AB6F67D0088F108 /* THTitleScene.h */,
 				9626A21F1AB6F67D0088F108 /* THTitleScene.m */,
 				9626A2211AB6F9E40088F108 /* THGamePlayScene.h */,
@@ -277,8 +297,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3D59131192176DE00198E96 /* InfoPlist.strings in Resources */,
+				96EE43811AB91153001875BD /* PressStart.caf in Resources */,
+				96EE43801AB91153001875BD /* Laser.caf in Resources */,
 				B3D59144192176DE00198E96 /* Images.xcassets in Resources */,
+				96EE437E1AB91153001875BD /* Damage.caf in Resources */,
 				9626A2251AB6FF320088F108 /* Sprites.atlas in Resources */,
+				96EE437F1AB91153001875BD /* Explode.caf in Resources */,
 				B3D5913A192176DE00198E96 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

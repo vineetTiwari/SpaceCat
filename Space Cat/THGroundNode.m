@@ -13,7 +13,7 @@
 
 + (instancetype) groundWithSize:(CGSize)size {
     
-    THGroundNode *ground = [self spriteNodeWithColor:[SKColor greenColor] size:size];
+    THGroundNode *ground = [self spriteNodeWithColor:[SKColor clearColor] size:size];
     ground.name = @"Ground";
     ground.position = CGPointMake(size.width/2, size.height/2);
     [ground setupPhysicsBody];
