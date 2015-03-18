@@ -136,13 +136,13 @@
         self.minSpeed             = -150;
     }
     
-    else if (self.totalGameTime > 20) {
+    else if (self.totalGameTime > 120) {
         // 120 / 60  = 2 minutes
         self.addEnemyTimeInterval = 0.75;
         self.minSpeed             = -125;
     }
     
-    else if (self.totalGameTime > 10) {
+    else if (self.totalGameTime > 30) {
         self.addEnemyTimeInterval = 1.00;
         self.minSpeed             = -100;
         

@@ -20,6 +20,10 @@
 		96EE437F1AB91153001875BD /* Explode.caf in Resources */ = {isa = PBXBuildFile; fileRef = 96EE437B1AB91153001875BD /* Explode.caf */; };
 		96EE43801AB91153001875BD /* Laser.caf in Resources */ = {isa = PBXBuildFile; fileRef = 96EE437C1AB91153001875BD /* Laser.caf */; };
 		96EE43811AB91153001875BD /* PressStart.caf in Resources */ = {isa = PBXBuildFile; fileRef = 96EE437D1AB91153001875BD /* PressStart.caf */; };
+		96EE43851AB91894001875BD /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EE43821AB91894001875BD /* GameOver.mp3 */; };
+		96EE43861AB91894001875BD /* Gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EE43831AB91894001875BD /* Gameplay.mp3 */; };
+		96EE43871AB91894001875BD /* StartScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EE43841AB91894001875BD /* StartScreen.mp3 */; };
+		96EE43891AB918C5001875BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE43881AB918C5001875BD /* AVFoundation.framework */; };
 		B3D59125192176DE00198E96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59124192176DE00198E96 /* Foundation.framework */; };
 		B3D59127192176DE00198E96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59126192176DE00198E96 /* CoreGraphics.framework */; };
 		B3D59129192176DE00198E96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59128192176DE00198E96 /* UIKit.framework */; };
@@ -69,6 +73,10 @@
 		96EE437B1AB91153001875BD /* Explode.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explode.caf; sourceTree = "<group>"; };
 		96EE437C1AB91153001875BD /* Laser.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Laser.caf; sourceTree = "<group>"; };
 		96EE437D1AB91153001875BD /* PressStart.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart.caf; sourceTree = "<group>"; };
+		96EE43821AB91894001875BD /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
+		96EE43831AB91894001875BD /* Gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gameplay.mp3; sourceTree = "<group>"; };
+		96EE43841AB91894001875BD /* StartScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StartScreen.mp3; sourceTree = "<group>"; };
+		96EE43881AB918C5001875BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B3D59121192176DE00198E96 /* Space Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D59124192176DE00198E96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3D59126192176DE00198E96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EE43891AB918C5001875BD /* AVFoundation.framework in Frameworks */,
 				B3D59127192176DE00198E96 /* CoreGraphics.framework in Frameworks */,
 				B3D59129192176DE00198E96 /* UIKit.framework in Frameworks */,
 				B3D5912B192176DE00198E96 /* SpriteKit.framework in Frameworks */,
@@ -119,6 +128,9 @@
 		96EE43791AB91134001875BD /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				96EE43821AB91894001875BD /* GameOver.mp3 */,
+				96EE43831AB91894001875BD /* Gameplay.mp3 */,
+				96EE43841AB91894001875BD /* StartScreen.mp3 */,
 				96EE437A1AB91153001875BD /* Damage.caf */,
 				96EE437B1AB91153001875BD /* Explode.caf */,
 				96EE437C1AB91153001875BD /* Laser.caf */,
@@ -149,6 +161,7 @@
 		B3D59123192176DE00198E96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96EE43881AB918C5001875BD /* AVFoundation.framework */,
 				B3D59124192176DE00198E96 /* Foundation.framework */,
 				B3D59126192176DE00198E96 /* CoreGraphics.framework */,
 				B3D59128192176DE00198E96 /* UIKit.framework */,
@@ -296,13 +309,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EE43861AB91894001875BD /* Gameplay.mp3 in Resources */,
 				B3D59131192176DE00198E96 /* InfoPlist.strings in Resources */,
 				96EE43811AB91153001875BD /* PressStart.caf in Resources */,
 				96EE43801AB91153001875BD /* Laser.caf in Resources */,
 				B3D59144192176DE00198E96 /* Images.xcassets in Resources */,
+				96EE43851AB91894001875BD /* GameOver.mp3 in Resources */,
 				96EE437E1AB91153001875BD /* Damage.caf in Resources */,
 				9626A2251AB6FF320088F108 /* Sprites.atlas in Resources */,
 				96EE437F1AB91153001875BD /* Explode.caf in Resources */,
+				96EE43871AB91894001875BD /* StartScreen.mp3 in Resources */,
 				B3D5913A192176DE00198E96 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
