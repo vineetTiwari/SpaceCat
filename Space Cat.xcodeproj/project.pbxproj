@@ -26,6 +26,7 @@
 		96EE43891AB918C5001875BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EE43881AB918C5001875BD /* AVFoundation.framework */; };
 		96EE43901AB92B39001875BD /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96EE438E1AB92B39001875BD /* Explosion.sks */; };
 		96EE43911AB92B39001875BD /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EE438F1AB92B39001875BD /* spark.png */; };
+		96EE43941AB9304C001875BD /* THHudNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EE43931AB9304C001875BD /* THHudNode.m */; };
 		B3D59125192176DE00198E96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59124192176DE00198E96 /* Foundation.framework */; };
 		B3D59127192176DE00198E96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59126192176DE00198E96 /* CoreGraphics.framework */; };
 		B3D59129192176DE00198E96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59128192176DE00198E96 /* UIKit.framework */; };
@@ -81,6 +82,8 @@
 		96EE43881AB918C5001875BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		96EE438E1AB92B39001875BD /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		96EE438F1AB92B39001875BD /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		96EE43921AB9304C001875BD /* THHudNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THHudNode.h; path = ../THHudNode.h; sourceTree = "<group>"; };
+		96EE43931AB9304C001875BD /* THHudNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THHudNode.m; path = ../THHudNode.m; sourceTree = "<group>"; };
 		B3D59121192176DE00198E96 /* Space Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D59124192176DE00198E96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3D59126192176DE00198E96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -183,6 +186,8 @@
 				9626A21F1AB6F67D0088F108 /* THTitleScene.m */,
 				9626A2211AB6F9E40088F108 /* THGamePlayScene.h */,
 				9626A2221AB6F9E40088F108 /* THGamePlayScene.m */,
+				96EE43921AB9304C001875BD /* THHudNode.h */,
+				96EE43931AB9304C001875BD /* THHudNode.m */,
 				960029711AB7B93B00090B70 /* THProjectileNode.h */,
 				960029721AB7B93B00090B70 /* THProjectileNode.m */,
 				960029781AB7D3DE00090B70 /* THSpaceDogNode.h */,
@@ -351,6 +356,7 @@
 				960029771AB7CC7700090B70 /* THUtil.m in Sources */,
 				B3D59137192176DE00198E96 /* THAppDelegate.m in Sources */,
 				9626A2231AB6F9E40088F108 /* THGamePlayScene.m in Sources */,
+				96EE43941AB9304C001875BD /* THHudNode.m in Sources */,
 				B3D59133192176DE00198E96 /* main.m in Sources */,
 				9626A2201AB6F67D0088F108 /* THTitleScene.m in Sources */,
 				9626A2281AB70E0D0088F108 /* THMachineNode.m in Sources */,

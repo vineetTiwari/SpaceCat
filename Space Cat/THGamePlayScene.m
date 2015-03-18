@@ -14,6 +14,7 @@
 #import "THGroundNode.h"
 #import "THUtil.h"
 #import <AVFoundation/AVFoundation.h>
+#import "THHudNode.h"
 
 @interface THGamePlayScene ()
 
@@ -59,6 +60,10 @@
         [self addChild:ground];
         
         [self setupSounds];
+        
+        THHudNode *hud = [THHudNode hudAtPosition:CGPointMake(0, self.frame.size.height - 20) inFrame:self.frame];
+        [self addChild:hud];
+        
     }
     return self;
 }
