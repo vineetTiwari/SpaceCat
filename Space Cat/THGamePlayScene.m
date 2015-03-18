@@ -187,9 +187,13 @@
         
         [self runAction:self.explodeSFX];
         
-        [spaceDog removeFromParent];
-        [projectile removeFromParent];
+        if ([spaceDog isDamaged]) {
+            [self runAction:self.explodeSFX];
         
+            [spaceDog removeFromParent];
+            [projectile removeFromParent];
+            [self createDebrisAtPosition:contact.contactPoint];
+        }
         
         
     }
@@ -198,12 +202,10 @@
         THSpaceDogNode *spaceDog = (THSpaceDogNode *)firstBody.node;
         
         [self runAction:self.damageSFX];
-        
         [spaceDog removeFromParent];
+        [self createDebrisAtPosition:contact.contactPoint];
         
     }
-    
-    [self createDebrisAtPosition:contact.contactPoint];
     
 }
 
