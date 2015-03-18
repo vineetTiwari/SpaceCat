@@ -28,27 +28,28 @@
     for (int i = 0; i < hud.lives; i++) {
         
         SKSpriteNode *lifeBar = [SKSpriteNode spriteNodeWithImageNamed:@"HUD_life_1"];
-        lifeBar.name = [NSString stringWithFormat:@"Life%d", i+1];
+        lifeBar.name = [NSString stringWithFormat:@"Life%d", i + 1];
+        
         [hud addChild:lifeBar];
         
         if (lastLifeBar == nil) {
             lifeBar.position = CGPointMake(catHead.position.x + 30, catHead.position.y);
         }
         else {
-            lifeBar.position = CGPointMake(lastLifeBar.position.x, lastLifeBar.position.y);
+            lifeBar.position = CGPointMake(lastLifeBar.position.x + 10, lastLifeBar.position.y);
         }
         
         lastLifeBar = lifeBar;
     }
     
-    SKLabelNode *scoreLable = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
+    SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
     
-    scoreLable.name                    =  @"Score";
-    scoreLable.text                    =  @"0";
-    scoreLable.fontSize                =  24;
-    scoreLable.horizontalAlignmentMode =  SKLabelHorizontalAlignmentModeRight;
-    scoreLable.position                =  CGPointMake(frame.size.width - 20, -10);
-    [hud addChild:scoreLable];
+    scoreLabel.name                    =  @"Score";
+    scoreLabel.text                    =  @"0";
+    scoreLabel.fontSize                =  24;
+    scoreLabel.horizontalAlignmentMode =  SKLabelHorizontalAlignmentModeRight;
+    scoreLabel.position                =  CGPointMake(frame.size.width - 20, -10);
+    [hud addChild:scoreLabel];
 
     return hud;
 }
