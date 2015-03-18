@@ -28,6 +28,7 @@
 @property (nonatomic) SKAction *laserSFX;
 @property (nonatomic) AVAudioPlayer *backgroundMusic;
 
+
 @end
 
 @implementation THGamePlayScene
@@ -190,6 +191,8 @@
         THSpaceDogNode *spaceDog      =  (THSpaceDogNode *)firstBody.node;
         THProjectileNode *projectile  =  (THProjectileNode *)secondBody.node;
         
+        [self addPoints:THPointsPerHit];
+        
         [self runAction:self.explodeSFX];
         
         if ([spaceDog isDamaged]) {
@@ -210,8 +213,22 @@
         [spaceDog removeFromParent];
         [self createDebrisAtPosition:contact.contactPoint];
         
+        [self loseLife];
+        
     }
     
+}
+
+- (void) addPoints:(NSInteger)points {
+    
+    THHudNode *hud = (THHudNode *)[self childNodeWithName:@"HUD"];
+    [hud addPoints:points];
+}
+
+- (void) loseLife {
+    
+    THHudNode *hud = (THHudNode *)[self childNodeWithName:@"HUD"];
+    [hud loseLife];
 }
 
 - (void) createDebrisAtPosition:(CGPoint)position {
