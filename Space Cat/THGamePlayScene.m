@@ -13,6 +13,7 @@
 #import "THSpaceDogNode.h"
 #import "THGroundNode.h"
 #import "THUtil.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface THGamePlayScene ()
 
@@ -24,6 +25,7 @@
 @property (nonatomic) SKAction *damageSFX;
 @property (nonatomic) SKAction *explodeSFX;
 @property (nonatomic) SKAction *laserSFX;
+@property (nonatomic) AVAudioPlayer *backgroundMusic;
 
 @end
 
@@ -61,7 +63,19 @@
     return self;
 }
 
+- (void) didMoveToView:(SKView *)view  {
+    
+    [self.backgroundMusic play];
+}
+
 - (void) setupSounds {
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Gameplay" withExtension:@"mp3"];
+    
+    self.backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    self.backgroundMusic.numberOfLoops = -1;
+    [self.backgroundMusic prepareToPlay];
     
     self.damageSFX  = [SKAction playSoundFileNamed:  @"Damage.caf" waitForCompletion:NO];
     self.explodeSFX = [SKAction playSoundFileNamed: @"Explode.caf" waitForCompletion:NO];
