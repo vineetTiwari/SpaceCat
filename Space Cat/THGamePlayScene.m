@@ -14,10 +14,21 @@
 #import "THGroundNode.h"
 #import "THUtil.h"
 
+@interface THGamePlayScene ()
+
+@property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
+@property (nonatomic) NSTimeInterval timeSinceEnemyAdded;
+
+@end
+
 @implementation THGamePlayScene
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
+        self.lastUpdateTimeInterval =  0;
+        self.timeSinceEnemyAdded    =  0;
+        
         /* Setup your scene here */
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background_1"];
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
@@ -28,8 +39,6 @@
         
         THSpaceCatNode *spaceCat = [THSpaceCatNode spaceCatAtPosition:CGPointMake(machine.position.x, machine.position.y-2)];
         [self addChild:spaceCat];
-        
-        [self addSpaceDog];
         
         self.physicsWorld.gravity = CGVectorMake(0, -9.8);
         
@@ -62,13 +71,34 @@
 
 - (void) addSpaceDog {
     
-    THSpaceDogNode *spaceDogA = [THSpaceDogNode spaceDogOffType:THSpaceDogTypeA];
-    spaceDogA.position = CGPointMake(100, 300);
-    [self addChild:spaceDogA];
+    NSUInteger randomSpaceDog = [THUtil randomWithMin:0 max:2];
     
-    THSpaceDogNode *spaceDogB = [THSpaceDogNode spaceDogOffType:THSpaceDogTypeB];
-    spaceDogB.position = CGPointMake(200, 300);
-    [self addChild:spaceDogB];
+    THSpaceDogNode *spaceDog = [THSpaceDogNode spaceDogOffType:randomSpaceDog];
+    float y = self.frame.size.height + spaceDog.size.height;
+    float x = [THUtil randomWithMin: 10 + spaceDog.size.width max: self.frame.size.width - 10];
+    
+    spaceDog.position = CGPointMake(x, y);
+    [self addChild:spaceDog];
+    
+}
+
+- (void) update:(NSTimeInterval)currentTime {
+    
+    if (self.lastUpdateTimeInterval) {
+        
+        self.timeSinceEnemyAdded += currentTime - self.lastUpdateTimeInterval;
+        
+    }
+    
+    if (self.timeSinceEnemyAdded >= 1.15) {
+        
+        [self addSpaceDog];
+        self.timeSinceEnemyAdded = 0;
+        
+    }
+    
+    self.lastUpdateTimeInterval = currentTime;
+    
 }
 
 - (void) didBeginContact:(SKPhysicsContact *)contact {
