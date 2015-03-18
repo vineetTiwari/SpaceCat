@@ -30,6 +30,7 @@
 @property (nonatomic) AVAudioPlayer *backgroundMusic;
 @property (nonatomic) BOOL gameOver;
 @property (nonatomic) BOOL restart;
+@property (nonatomic) BOOL gameOverDisplayed;
 
 @end
 
@@ -45,6 +46,7 @@
         self.minSpeed               =  THSpaceDogMinSpeed;
         self.restart                =  NO;
         self.gameOver               =  NO;
+        self.gameOverDisplayed      =  NO;
         
         /* Setup your scene here */
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background_1"];
@@ -120,7 +122,8 @@
     
     [self addChild:gameOver];
     
-    self.restart = YES;
+    self.restart            =  YES;
+    self.gameOverDisplayed  =  YES;
 }
 
 - (void) shootProjectileTowardsPosition:(CGPoint)position {
@@ -138,17 +141,17 @@
 
 - (void) addSpaceDog {
     
-    NSUInteger randomSpaceDog = [THUtil randomWithMin:0 max:2];
+    NSUInteger randomSpaceDog     = [THUtil randomWithMin:0 max:2];
     
-    THSpaceDogNode *spaceDog = [THSpaceDogNode spaceDogOffType:randomSpaceDog];
+    THSpaceDogNode *spaceDog      = [THSpaceDogNode spaceDogOffType:randomSpaceDog];
     
-    float dy = [THUtil randomWithMin: THSpaceDogMinSpeed max: THSpaceDogMaxSpeed];
+    float dy                      = [THUtil randomWithMin: THSpaceDogMinSpeed max: THSpaceDogMaxSpeed];
     spaceDog.physicsBody.velocity = CGVectorMake(0, dy);
     
-    float y = self.frame.size.height + spaceDog.size.height;
-    float x = [THUtil randomWithMin: 10 + spaceDog.size.width max: self.frame.size.width - spaceDog.size.width - 10];
+    float y                       = self.frame.size.height + spaceDog.size.height;
+    float x                       = [THUtil randomWithMin: 10 + spaceDog.size.width max: self.frame.size.width - spaceDog.size.width - 10];
     
-    spaceDog.position = CGPointMake(x, y);
+    spaceDog.position             = CGPointMake(x, y);
     [self addChild:spaceDog];
     
 }
@@ -161,14 +164,14 @@
         self.totalGameTime       +=  currentTime - self.lastUpdateTimeInterval;
     }
     
-    if (self.timeSinceEnemyAdded >= self.addEnemyTimeInterval) {
+    if (self.timeSinceEnemyAdded >=  self.addEnemyTimeInterval && !self.gameOver) {
     
         [self addSpaceDog];
-        self.timeSinceEnemyAdded = 0;
+        self.timeSinceEnemyAdded =   0;
         
     }
     
-    self.lastUpdateTimeInterval = currentTime;
+    self.lastUpdateTimeInterval  =   currentTime;
     
     if (self.totalGameTime > 480) {
         // 480 / 60 = 8 minutes
@@ -178,23 +181,23 @@
     
     else if (self.totalGameTime > 240) {
         // 240 / 60 = 4 minutes
-        self.addEnemyTimeInterval = 0.65;
-        self.minSpeed             = -150;
+        self.addEnemyTimeInterval =  0.65;
+        self.minSpeed             =  -150;
     }
     
     else if (self.totalGameTime > 120) {
         // 120 / 60  = 2 minutes
-        self.addEnemyTimeInterval = 0.75;
-        self.minSpeed             = -125;
+        self.addEnemyTimeInterval =  0.75;
+        self.minSpeed             =  -125;
     }
     
     else if (self.totalGameTime > 30) {
-        self.addEnemyTimeInterval = 1.00;
-        self.minSpeed             = -100;
+        self.addEnemyTimeInterval =  1.00;
+        self.minSpeed             =  -100;
         
     }
     
-    if (self.gameOver) {
+    if (self.gameOver && !self.gameOverDisplayed) {
         
         [self performGameOver];
     }
