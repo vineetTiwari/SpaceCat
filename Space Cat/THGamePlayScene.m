@@ -15,6 +15,7 @@
 #import "THUtil.h"
 #import <AVFoundation/AVFoundation.h>
 #import "THHudNode.h"
+#import "THGameOverNode.h"
 
 @interface THGamePlayScene ()
 
@@ -27,7 +28,8 @@
 @property (nonatomic) SKAction *explodeSFX;
 @property (nonatomic) SKAction *laserSFX;
 @property (nonatomic) AVAudioPlayer *backgroundMusic;
-
+@property (nonatomic) BOOL gameOver;
+@property (nonatomic) BOOL restart;
 
 @end
 
@@ -41,6 +43,8 @@
         self.addEnemyTimeInterval   =  1.25;
         self.totalGameTime          =  0;
         self.minSpeed               =  THSpaceDogMinSpeed;
+        self.restart                =  NO;
+        self.gameOver               =  NO;
         
         /* Setup your scene here */
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background_1"];
@@ -90,11 +94,33 @@
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *touch in touches) {
+    
+    if (!self.gameOver) {
+
+        for (UITouch *touch in touches) {
         
-        CGPoint position = [touch locationInNode:self];
-        [self shootProjectileTowardsPosition:position];
+            CGPoint position = [touch locationInNode:self];
+            [self shootProjectileTowardsPosition:position];
+        }
     }
+    else if (self.restart) {
+        
+        for (SKNode *node in [self children]) {
+            [node removeFromParent];
+        }
+        
+        THGamePlayScene *scene = [THGamePlayScene sceneWithSize:self.view.bounds.size];
+        [self.view presentScene:scene];
+    }
+}
+
+- (void) performGameOver {
+    
+    THGameOverNode *gameOver = [THGameOverNode gameOverAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+    
+    [self addChild:gameOver];
+    
+    self.restart = YES;
 }
 
 - (void) shootProjectileTowardsPosition:(CGPoint)position {
@@ -168,6 +194,11 @@
         
     }
     
+    if (self.gameOver) {
+        
+        [self performGameOver];
+    }
+    
 }
 
 - (void) didBeginContact:(SKPhysicsContact *)contact {
@@ -228,7 +259,7 @@
 - (void) loseLife {
     
     THHudNode *hud = (THHudNode *)[self childNodeWithName:@"HUD"];
-    [hud loseLife];
+    self.gameOver = [hud loseLife];
 }
 
 - (void) createDebrisAtPosition:(CGPoint)position {

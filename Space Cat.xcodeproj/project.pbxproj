@@ -16,6 +16,7 @@
 		9626A2251AB6FF320088F108 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9626A2241AB6FF320088F108 /* Sprites.atlas */; };
 		9626A2281AB70E0D0088F108 /* THMachineNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9626A2271AB70E0D0088F108 /* THMachineNode.m */; };
 		9626A22B1AB782700088F108 /* THSpaceCatNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9626A22A1AB782700088F108 /* THSpaceCatNode.m */; };
+		9681102A1ABA312200650A24 /* THGameOverNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 968110291ABA312200650A24 /* THGameOverNode.m */; };
 		96EE437E1AB91153001875BD /* Damage.caf in Resources */ = {isa = PBXBuildFile; fileRef = 96EE437A1AB91153001875BD /* Damage.caf */; };
 		96EE437F1AB91153001875BD /* Explode.caf in Resources */ = {isa = PBXBuildFile; fileRef = 96EE437B1AB91153001875BD /* Explode.caf */; };
 		96EE43801AB91153001875BD /* Laser.caf in Resources */ = {isa = PBXBuildFile; fileRef = 96EE437C1AB91153001875BD /* Laser.caf */; };
@@ -72,6 +73,8 @@
 		9626A2271AB70E0D0088F108 /* THMachineNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THMachineNode.m; path = ../THMachineNode.m; sourceTree = "<group>"; };
 		9626A2291AB782700088F108 /* THSpaceCatNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THSpaceCatNode.h; path = ../THSpaceCatNode.h; sourceTree = "<group>"; };
 		9626A22A1AB782700088F108 /* THSpaceCatNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THSpaceCatNode.m; path = ../THSpaceCatNode.m; sourceTree = "<group>"; };
+		968110281ABA312200650A24 /* THGameOverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGameOverNode.h; sourceTree = "<group>"; };
+		968110291ABA312200650A24 /* THGameOverNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THGameOverNode.m; sourceTree = "<group>"; };
 		96EE437A1AB91153001875BD /* Damage.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Damage.caf; sourceTree = "<group>"; };
 		96EE437B1AB91153001875BD /* Explode.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explode.caf; sourceTree = "<group>"; };
 		96EE437C1AB91153001875BD /* Laser.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Laser.caf; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				9600297C1AB7DCAC00090B70 /* THGroundNode.m */,
 				9626A2261AB70E0D0088F108 /* THMachineNode.h */,
 				9626A2271AB70E0D0088F108 /* THMachineNode.m */,
+				968110281ABA312200650A24 /* THGameOverNode.h */,
+				968110291ABA312200650A24 /* THGameOverNode.m */,
 				960029751AB7CC7700090B70 /* THUtil.h */,
 				960029761AB7CC7700090B70 /* THUtil.m */,
 				96EE438E1AB92B39001875BD /* Explosion.sks */,
@@ -354,6 +359,7 @@
 				960029731AB7B93B00090B70 /* THProjectileNode.m in Sources */,
 				B3D5913D192176DE00198E96 /* THViewController.m in Sources */,
 				960029771AB7CC7700090B70 /* THUtil.m in Sources */,
+				9681102A1ABA312200650A24 /* THGameOverNode.m in Sources */,
 				B3D59137192176DE00198E96 /* THAppDelegate.m in Sources */,
 				9626A2231AB6F9E40088F108 /* THGamePlayScene.m in Sources */,
 				96EE43941AB9304C001875BD /* THHudNode.m in Sources */,
