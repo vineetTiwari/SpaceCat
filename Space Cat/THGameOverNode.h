@@ -12,4 +12,6 @@
 
 + (instancetype) gameOverAtPosition:(CGPoint)position;
 
+- (void) performAnimation;
+
 @end

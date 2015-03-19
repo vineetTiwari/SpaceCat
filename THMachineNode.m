@@ -12,16 +12,17 @@
 
 + (instancetype) machineAtPosition:(CGPoint)position {
     
-    THMachineNode *machine = [self spriteNodeWithImageNamed:@"machine_1"];
-    machine.position = position;
-    machine.name = @"Machine";
-    machine.anchorPoint = CGPointMake(0.5, 0);
+    THMachineNode *machine     =  [self spriteNodeWithImageNamed:@"machine_1"];
+    machine.position           =  position;
+    machine.zPosition          =  8;
+    machine.name               =  @"Machine";
+    machine.anchorPoint        =  CGPointMake(0.5, 0);
     
-    NSArray *textures = @[[SKTexture textureWithImageNamed:@"machine_1"],
-                          [SKTexture textureWithImageNamed:@"machine_2"]];
-    SKAction *machineAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
+    NSArray *textures          =  @[[SKTexture textureWithImageNamed:@"machine_1"],
+                                    [SKTexture textureWithImageNamed:@"machine_2"]];
+    SKAction *machineAnimation =  [SKAction animateWithTextures:textures timePerFrame:0.1];
     
-    SKAction *machineRepeat = [SKAction repeatActionForever:machineAnimation];
+    SKAction *machineRepeat    =  [SKAction repeatActionForever:machineAnimation];
     [machine runAction:machineRepeat];
 
     return machine;

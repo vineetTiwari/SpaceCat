@@ -15,10 +15,11 @@
 @implementation THSpaceCatNode
 
 + (instancetype) spaceCatAtPosition:(CGPoint)position {
-    THSpaceCatNode *spaceCat = [self spriteNodeWithImageNamed:@"spacecat_1"];
-    spaceCat.position = position;
-    spaceCat.anchorPoint = CGPointMake(0.5, 0);
-    spaceCat.name = @"SpaceCat";
+    THSpaceCatNode *spaceCat =  [self spriteNodeWithImageNamed:@"spacecat_1"];
+    spaceCat.position        =  position;
+    spaceCat.zPosition       =  9;
+    spaceCat.anchorPoint     =  CGPointMake(0.5, 0);
+    spaceCat.name            =  @"SpaceCat";
     
     return spaceCat;    
 }
@@ -35,9 +36,9 @@
         return _tapAction;
     }
     
-    NSArray *textures = @[[SKTexture textureWithImageNamed:@"spaceCat_2"],
-                          [SKTexture textureWithImageNamed:@"spaceCat_1"]];
-    _tapAction = [SKAction animateWithTextures:textures timePerFrame:0.25];
+    NSArray *textures =  @[[SKTexture textureWithImageNamed:@"spaceCat_2"],
+                           [SKTexture textureWithImageNamed:@"spaceCat_1"]];
+    _tapAction        =  [SKAction animateWithTextures:textures timePerFrame:0.25];
     
     return _tapAction;
     
